@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+* {
+  font-family: 'Nunito';
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(to top left, #753682 0%, #bf2e34 100%);
+}
+
+.container {
+  position: relative;
+  height: 60%;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.left {
+  overflow: auto;
+  height: 100%;
+  /* opacity: 0.6; */
+  background-color: rgba(255, 255, 255, 0.61);
+  width: 100%;
+  padding: 50px 0px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  transition: 0.3s all;
+}
+
+.p1Score {
+  color: #bf2e54;
+  font-size: 80px;
+}
+
+.info {
+  width: 100%;
+  color: rgb(38, 38, 38);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.info h1 {
+  font-size: 50px;
+}
+
+.middle {
+  position: absolute;
+  z-index: 10;
+  height: 60%;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.gameButtons {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.gameButtons button {
+  margin: 10px 0px;
+}
+
+.middle img {
+  width: 80px;
+  border-radius: 10px;
+}
+
+.middle button {
+  color: rgb(57, 57, 57);
+  width: 150px;
+  padding: 5px 10px;
+  border-radius: 50px;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.3s all;
+}
+
+.middle button:active {
+  opacity: 0.6;
+}
+
+.right {
+  overflow: auto;
+  height: 100%;
+  opacity: 0.6;
+  background-color: rgba(255, 255, 255, 0.61);
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  width: 100%;
+  padding: 50px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  transition: 0.3s all;
+}
+
+.p2Score {
+  font-size: 80px;
+  color: #bf2e54;
+}
+
+.currScore button {
+  background-color: #bf2e54;
+  cursor: pointer;
+  color: white;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 50px;
+  font-size: 20px;
+  transition: 0.3s all;
+}
+
+.currScore button:active {
+  opacity: 0.6;
+}
+
+button span {
+  margin-top: 10px;
+  font-size: 35px;
+}
+
+@media screen and (max-width: 730px) {
+  .container {
+    height: 100%;
+    flex-direction: column;
+  }
+  .middle {
+    width: 90%;
+    justify-content: space-between;
+    flex-direction: row;
+    height: auto;
+  }
+  .left {
+    border-bottom-right-radius: 0px;
+  }
+  .right {
+    border-top-right-radius: 0px;
+  }
+  .middle button {
+    width: 180px;
+    font-size: 22px;
+  }
+
+  .middle img {
+    width: 80px;
+  }
+
+  .info h1 {
+    font-size: 35px;
+  }
+
+  .p1Score {
+    font-size: 35px;
+  }
+
+  .p2Score {
+    font-size: 35px;
+  }
+
+  .currScore button {
+    font-size: 15px;
+    padding: 5px 40px;
+  }
+
+  button span {
+    font-size: 22px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .container {
+    height: 100%;
+    flex-direction: column;
+  }
+  .middle {
+    width: 90%;
+    justify-content: space-between;
+    flex-direction: row;
+    height: auto;
+  }
+  .middle button {
+    width: 100px;
+    font-size: 12px;
+  }
+
+  .middle img {
+    width: 60px;
+  }
+
+  .info h1 {
+    font-size: 30px;
+  }
+
+  .p1Score {
+    font-size: 30px;
+  }
+
+  .p2Score {
+    font-size: 30px;
+  }
+
+  .currScore button {
+    font-size: 12px;
+    padding: 10px 40px;
+  }
+
+  button span {
+    font-size: 18px;
+  }
+}
