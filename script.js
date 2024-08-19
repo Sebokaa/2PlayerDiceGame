@@ -6,7 +6,9 @@ let p2Score = document.querySelector('.p2Score');
 let currScoreP1 = document.querySelector('.p1CurrScore');
 let currScoreP2 = document.querySelector('.p2CurrScore');
 let diceImg = document.querySelector('.diceImg');
+let winnerNum = document.querySelector('.winnerNum');
 let randomNum = 0;
+const overlay = document.querySelector('.overlay');
 const leftBackground = document.querySelector('.left');
 const rightBackground = document.querySelector('.right');
 const currButtonP1 = document.querySelectorAll('.currButtonP1');
@@ -14,6 +16,7 @@ const currButtonP2 = document.querySelectorAll('.currButtonP2');
 const newGame = document.querySelector('.newGame');
 const rollDice = document.querySelector('.rollDice');
 const hold = document.querySelector('.hold');
+let middle = document.querySelector('.middle');
 
 const imagePicker = () => {
   randomNum = Math.trunc(Math.random() * 6 + 1);
@@ -61,7 +64,12 @@ const p2ScoreUpdater = () => {
 const switcher = () => {
   totalP1 += Number(currScoreP1.textContent);
   p1Score.textContent = totalP1;
+  if (totalP1 >= 100) {
+    winnerNum.textContent = 1;
+    overlay.style.display = 'flex';
+  }
   isP1Turn = false;
+  middle.style.left = '51%';
   currScoreP1.textContent = 0;
   leftBackground.style.opacity = '0.6';
   rightBackground.style.opacity = '1';
@@ -70,21 +78,30 @@ const switcher = () => {
 const switcher2 = () => {
   totalP2 += Number(currScoreP2.textContent);
   p2Score.textContent = totalP2;
+  if (totalP2 >= 100) {
+    winnerNum.textContent = 2;
+    overlay.style.display = 'flex';
+  }
   isP1Turn = true;
   currScoreP2.textContent = 0;
+  middle.style.left = '49%';
   leftBackground.style.opacity = '1';
   rightBackground.style.opacity = '0.6';
 };
 
+const winnerChecker = () => {
+};
+
 const aNewGame = () => {
-    totalP1 = 0;
-    totalP2 = 0;
-    p1Score.textContent = 0;
-    p2Score.textContent = 0;
-    currScoreP1.textContent = 0;
-    currScoreP2.textContent = 0;
-    diceImg.src = './dice-1.png'
-}
+  totalP1 = 0;
+  totalP2 = 0;
+  p1Score.textContent = 0;
+  p2Score.textContent = 0;
+  currScoreP1.textContent = 0;
+  currScoreP2.textContent = 0;
+  diceImg.src = './dice-1.png';
+  overlay.style.display = 'none';
+};
 
 rollDice.addEventListener('click', () => {
   if (isP1Turn) {
@@ -100,4 +117,4 @@ hold.addEventListener('click', () => {
     switcher2();
   }
 });
-newGame.addEventListener('click', aNewGame)
+newGame.addEventListener('click', aNewGame);

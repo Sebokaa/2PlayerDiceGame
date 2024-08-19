@@ -66,9 +66,10 @@ body {
   justify-content: space-around;
   flex-direction: column;
   align-items: center;
-  left: 50%;
+  left: 49%;
   top: 50%;
   transform: translate(-50%, -50%);
+  transition: 0.3s all;
 }
 
 .gameButtons {
@@ -145,6 +146,49 @@ body {
 button span {
   margin-top: 10px;
   font-size: 35px;
+}
+
+.overlay{
+  text-align: center;
+  font-size: 30px;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transform: translate(-50%, -50%);
+  z-index: 20;
+  display: none;
+}
+.containIt{
+  padding: 40px 50px;
+  border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.874);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.containIt button {
+  margin-top: 20px;
+  color: rgb(57, 57, 57);
+  width: 200px;
+  padding: 15px 10px;
+  border-radius: 50px;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+  transition: 0.3s all;
+}
+
+.containIt button:active {
+  opacity: 0.6;
 }
 
 @media screen and (max-width: 730px) {
