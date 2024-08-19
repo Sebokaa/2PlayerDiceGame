@@ -13,7 +13,7 @@ const leftBackground = document.querySelector('.left');
 const rightBackground = document.querySelector('.right');
 const currButtonP1 = document.querySelectorAll('.currButtonP1');
 const currButtonP2 = document.querySelectorAll('.currButtonP2');
-const newGame = document.querySelector('.newGame');
+const newGame = document.querySelectorAll('.newGame');
 const rollDice = document.querySelector('.rollDice');
 const hold = document.querySelector('.hold');
 let middle = document.querySelector('.middle');
@@ -117,4 +117,8 @@ hold.addEventListener('click', () => {
     switcher2();
   }
 });
-newGame.addEventListener('click', aNewGame);
+newGame.forEach((button) => {
+    button.addEventListener('click', aNewGame);
+})
+
+
